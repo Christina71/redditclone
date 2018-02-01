@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<form action="#"
+      th:action="@{/process}"
+      th:object="${sitelink}"
+      method="post">
+      <input type ="hidden" th:field="*{id}" />
+    Title:<input type="text" th:field="*{title}" />
+    <span th:if="${#fields.hasErrors('title')}"
+          th:errors="*{title}"></span><br/>
+    Urls:<input type="text" th:field="*{urls}" />
+    <span th:if="${#fields.hasErrors('urls')}"
+          th:errors="*{urls}"></span><br/>
+    Description:<input type="text" th:field="*{description}" />
+    <span th:if="${#fields.hasErrors('description')}"
+          th:errors="*{description}"></span><br/>
+    <br/>
+    <input type="submit" value="Submit"/>
+</form>
+</body>
+</html>

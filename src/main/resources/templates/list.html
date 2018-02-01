@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<a href="/add"> Add a URL </a> <br/>
+<div th:each="sitelink:${sitelinks}">
+    <h4 th:inline="text"> [[${sitelink.title}]]@[[${sitelink.urls}]]</h4>
+    <p th:text="${sitelink.description}"></p>
+</div>
+</body>
+</html>
